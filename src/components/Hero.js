@@ -19,11 +19,11 @@ export default function Hero() {
         }
     ];
     return (
-        <div className="grid .grid-cols-2 text-dull-gray text-xl py-[96px]">
+        <div className="grid grid-cols-2 text-dull-gray text-xl py-[96px]">
             <div className="flex flex-col gap-6">
-                <h1 className="text-[64px] font-sans text-black">Hi 👋 It’s Oniicode, </h1>
+                <h1 className="text-[54px] font-sans text-black">Hi 👋 I am Oniicode, </h1>
                 <p>
-                    Welcome to my digital garden of thoughts, code and melodies. 
+                I'm a software engineer, creative entrepreneur, and content creator passionate about solving real-world problems with technology, inspiring growth, and helping individuals turn their ideas into impactful businesses.
                 </p>
                 <p>
                     On this site you’ll find out a few things about me. <br />Let’s connect
@@ -37,7 +37,7 @@ export default function Hero() {
                     </svg>
 
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 font-sans">
                     {hobbies && hobbies.map((hobby) =>(
                         <div 
                             key={hobby.id}
@@ -45,7 +45,7 @@ export default function Hero() {
                             <div>
                                 <div style={{backgroundColor: hobby.color}} className="w-2 h-2 rounded-full"></div>
                             </div>
-                            <div className="text-base">{hobby.title}</div>
+                            <div className="text-2xl">{hobby.title}</div>
                         </div>
                     ))}
                 </div>
