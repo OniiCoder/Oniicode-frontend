@@ -1,21 +1,32 @@
-import { Nunito } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import '@/app/global.css'
+import localFont from 'next/font/local'
 
-const nunitoFont = Nunito({
+const interFont = Inter({
     subsets: ['latin'],
     display: 'swap',
 })
 
+const oniicodeFont = localFont({
+    src: [
+        {
+        path: '../../public/fonts/Oniicode-Regular.ttf',
+        weight: '400'
+        },
+    ],
+    variable: '--font-oniicode'
+})
+
 const RootLayout = ({ children }) => {
     return (
-        <html lang="en" className={nunitoFont.className}>
+        <html lang="en" className={`${interFont.className} ${oniicodeFont.variable}`}>
             <body className="antialiased">{children}</body>
         </html>
     )
 }
 
 export const metadata = {
-    title: 'Laravel',
+    title: 'Oniicode',
 }
 
 export default RootLayout
