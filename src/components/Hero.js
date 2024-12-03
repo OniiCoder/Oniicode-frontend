@@ -15,11 +15,11 @@ export default function Hero() {
         {
             "id": 3,
             "color": "#FAB12F",
-            "title": "Music lover"
+            "title": "Musician"
         }
     ];
     return (
-        <div className="grid grid-cols-2 text-dull-gray text-xl py-[96px]">
+        <div className="grid grid-cols-2 .text-dull-gray text-xl py-[96px]">
             <div className="flex flex-col gap-6">
                 <h1 className="text-[54px] font-sans text-black">Hi 👋 I am Oniicode, </h1>
                 <p>

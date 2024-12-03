@@ -16,21 +16,24 @@ const Layout2 = ({ children }) => {
 
     return (
         <div>
-            <div className="tnextjs seext-gray-900 antialiased h-screen w-full bg-[#FCFCFB]">
-                <div className="bg-white border-b-[1px] border-b-[#F5F5F5]">
-                    <div className="flex items-center max-w-[1440px] mx-auto py-5">
-                        <ApplicationLogo />
-                        <div className="w-[64px]"></div>
-                        <div className='w-full flex justify-between items-center'>
-                            <NavigationLinks />
-                            <div>
+            <div className="text-gray-900 antialiased h-screen w-full bg-[#FCFCFB]">
+                <div className="fixed top-0 left-0 w-full border-b-[1px] border-b-[#F5F5F5]">
+                    <div className="bg-white">
+                        <div className="max-w-[1216px] mx-auto flex items-center max-w-[1440px] mx-auto py-5">
+                            <ApplicationLogo />
+                            <div className="w-[64px]"></div>
+                            <div className='w-full flex justify-between items-center'>
+                                <NavigationLinks />
+                                <div>
 
-                                <PrimaryButton href="mailto:perezpeter32@gmail.com">Say hello</PrimaryButton>
+                                    <PrimaryButton href="mailto:perezpeter32@gmail.com">Say hello</PrimaryButton>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="max-w-[1440px] mx-auto">
+                <div className=".max-w-[1080px] max-w-[1216px] mx-auto">
+                    <div className="h-[80px]"></div>
                     {children}
                 </div>
             </div>

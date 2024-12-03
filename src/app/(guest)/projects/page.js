@@ -2,15 +2,12 @@ import Layout2 from "@/app/(auth)/layout2"
 import Featured from "@/components/Featured"
 import Hero from "@/components/Hero"
 
-const landing = () => {
+const Projects = () => {
     return (
         <Layout2>
-            <Hero/>
-            <Featured />
-            <div>Blog</div>
-            <div>Footer</div>
+            <div>Projects</div>
         </Layout2>
     )
 }
 
-export default landing
+export default Projects

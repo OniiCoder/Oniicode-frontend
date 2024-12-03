@@ -20,10 +20,10 @@ export default function NavigationLinks () {
             href="/blog"
             active={isActive('/blog')}
         >Blog</NavigationLink>
-        <NavigationLink
+        {/* <NavigationLink
             href="/social-feed"
             active={isActive('/social-feed')}
-        >Social feed</NavigationLink>
+        >Social feed</NavigationLink> */}
         <NavigationLink
             href="/resources"
             active={isActive('/resources')}
