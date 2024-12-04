@@ -1,5 +1,7 @@
 import Layout2 from "@/app/(auth)/layout2"
+import FeaturedBlog from "@/components/FeaturedBlog"
 import Featured from "@/components/Featured"
+import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 
 const landing = () => {
@@ -7,8 +9,8 @@ const landing = () => {
         <Layout2>
             <Hero/>
             <Featured />
-            <div>Blog</div>
-            <div>Footer</div>
+            <FeaturedBlog />
+            <Footer />
         </Layout2>
     )
 }
