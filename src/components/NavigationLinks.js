@@ -7,7 +7,7 @@ export default function NavigationLinks () {
     const isActive = (href) => pathname == href
 
     return (
-    <div className="flex gap-[24px]">
+    <div className="grid lg:flex gap-[24px] mt-6 lg:mt-0">
         <NavigationLink
             href="/landing"
             active={isActive('/landing')}

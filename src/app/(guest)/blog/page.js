@@ -6,7 +6,7 @@ import Hero from "@/components/Hero"
 const Blog = () => {
     return (
         <Layout2>
-            <FeaturedBlog />
+            <div className="mt-4">Coming soon</div>
         </Layout2>
     )
 }

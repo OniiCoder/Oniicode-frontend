@@ -49,7 +49,7 @@ export default function FeaturedBlog() {
                                 <div className="shrink-0 text-xs">
                                         {project.date}
                                 </div>
-                                <div className="grow-0 flex gap-3">
+                                <div className="flex-grow flex gap-3">
                                     <img className="w-[60px] h-[60px] rounded-[4px] object-cover" src={project.image} />
                                     <div className="grid">
                                         <div className="text-[18px] font-medium">{project.title}</div>

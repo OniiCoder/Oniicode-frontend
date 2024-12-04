@@ -5,7 +5,7 @@ import Hero from "@/components/Hero"
 const Resources = () => {
     return (
         <Layout2>
-            <div>Resources</div>
+            <div className="mt-4">Coming soon</div>
         </Layout2>
     )
 }
