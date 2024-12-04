@@ -19,13 +19,13 @@ export default function Hero() {
         }
     ];
     return (
-        <div className="grid grid-cols-2 .text-dull-gray text-xl py-[96px]">
+        <div className="grid lg:grid-cols-2 .text-dull-gray text-xl py-[64px] lg:py-[96px] px-5">
             <div className="flex flex-col gap-6">
-                <h1 className="text-[54px] font-sans text-black">Hi 👋 I am Oniicode, </h1>
-                <p>
+                <h1 className="text-3xl lg:text-[54px] font-sans text-black">Hi 👋 I am Oniicode, </h1>
+                <p className="text-base lg:text-xl">
                 I'm a software engineer, creative entrepreneur, and content creator passionate about solving real-world problems with technology, inspiring growth, and helping individuals turn their ideas into impactful businesses.
                 </p>
-                <p>
+                <p className="text-base lg:text-xl">
                     On this site you’ll find out a few things about me. <br />Let’s connect
                 </p>
                 <div className="relative flex flex-col justify-end h-[70px]">
@@ -37,7 +37,7 @@ export default function Hero() {
                     </svg>
 
                 </div>
-                <div className="flex items-center gap-4 font-sans">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-4 font-sans">
                     {hobbies && hobbies.map((hobby) =>(
                         <div 
                             key={hobby.id}

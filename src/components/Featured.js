@@ -26,7 +26,7 @@ export default function Featured() {
         },
     ];
     return (
-        <div className="grid text-xl pb-[64px]">
+        <div className="grid text-xl pb-[64px] px-5">
             <div className="flex flex-col gap-6">
                 <div className="flex gap-2 text-[24px] font-sans text-black font-bold">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,20 +37,20 @@ export default function Featured() {
                     Featured
                 </div>
                 
-                <div className="grid grid-cols-3 gap-4 bg-[#F5F5F5] rounded-[24px] p-[12px]">
+                <div className="grid lg:grid-cols-3 gap-4 bg-[#F5F5F5] rounded-[24px] p-[12px]">
                     {projects && projects.map((project, index) =>(
                         <div 
                             key={project.id}
                             className={`flex flex-col ${index % 2 != 0 ? 'flex-col-reverse' : ''} justify-between gap-[11px] bg-white rounded-[12px]`}>
-                            <div className="grid gap-6 px-5 py-5">
+                            <div className="grid gap-4 px-5 py-5">
                                 <div className="grid gap-3">
-                                    <div className="text-[18px] font-medium">{project.title}</div>
-                                    <div className="text-base text-dull-gray">{project.description}</div>
+                                    <div className="text-base lg:text-lg font-medium">{project.title}</div>
+                                    <div className="text-sm lg:text-base text-dull-gray">{project.description}</div>
                                 </div>
                                 <Link 
                                     href={project.link}
                                     target="_blank"
-                                    className="flex justify-between items-center text-sm font-medium">
+                                    className="flex justify-between items-center text-sm font-medium border-t-[1px] border-t-[#FBFBFB] py-[12px]">
                                     View Project
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M9.62 3.95337L13.6667 8.00004L9.62 12.0467" stroke="#292929" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -59,7 +59,7 @@ export default function Featured() {
 
                                 </Link>
                             </div>
-                            <img className="w-full h-[324px] rounded-[12px] object-cover" src={project.image} />
+                            <img className="w-full h-[240px] lg:h-[324px] rounded-[12px] object-cover" src={project.image} />
                         </div>
                     ))}
                 </div>
