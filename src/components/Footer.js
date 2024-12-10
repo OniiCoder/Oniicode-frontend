@@ -1,10 +1,9 @@
-import Link from "next/link";
-import Socials from "./Socials";
+import Socials from "./Socials"
 
 export default function Footer() {
     return (
-        <div className="flex justify-between items-center py-6 text-base text-dull-gray">
-            <div>&copy; Copyright Oniicode, 2024. All rights reserved. </div>
+        <div className="px-5 flex flex-col lg:flex-row flex-col-reverse justify-between gap-6 items-center py-6 text-sm lg:text-base text-dull-gray text-center">
+            <div>&copy; Copyright Oniicode, {new Date().getFullYear()}. All rights reserved. </div>
             <Socials />
         </div>
     )

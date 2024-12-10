@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google'
 import '@/app/global.css'
 import localFont from 'next/font/local'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const interFont = Inter({
     subsets: ['latin'],
@@ -10,16 +12,18 @@ const interFont = Inter({
 const oniicodeFont = localFont({
     src: [
         {
-        path: '../../public/fonts/Oniicode-Regular.ttf',
-        weight: '400'
+            path: '../../public/fonts/Oniicode-Regular.ttf',
+            weight: '400',
         },
     ],
-    variable: '--font-oniicode'
+    variable: '--font-oniicode',
 })
 
 const RootLayout = ({ children }) => {
     return (
-        <html lang="en" className={`${interFont.className} ${oniicodeFont.variable}`}>
+        <html
+            lang="en"
+            className={`${interFont.className} ${oniicodeFont.variable}`}>
             <body className="antialiased">{children}</body>
         </html>
     )

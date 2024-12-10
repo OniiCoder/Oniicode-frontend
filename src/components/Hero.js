@@ -1,6 +1,13 @@
-import PrimaryButton from "./PrimaryButton";
+"use client"
+import { useEffect } from "react"
+import PrimaryButton from "./PrimaryButton"
+import Aos from "aos"
 
 export default function Hero() {
+    useEffect(() => {
+        Aos.init()
+      }, [])
+
     const hobbies = [
         {
             "id": 1,
@@ -17,11 +24,15 @@ export default function Hero() {
             "color": "#FAB12F",
             "title": "Musician"
         }
-    ];
+    ]
+    
     return (
         <div className="grid lg:grid-cols-2 .text-dull-gray text-xl py-[64px] lg:py-[96px] px-5">
             <div className="flex flex-col gap-6">
-                <h1 className="text-3xl lg:text-[54px] font-sans text-black">Hi 👋 I am Oniicode, </h1>
+                <h1 
+                    data-aos="fade-up"
+                    className="text-3xl lg:text-[54px] font-sans text-black"
+                >Hi 👋 I am Oniicode, </h1>
                 <p className="text-base lg:text-xl">
                 I'm a software engineer, creative entrepreneur, and content creator passionate about solving real-world problems with technology, inspiring growth, and helping individuals turn their ideas into impactful businesses.
                 </p>

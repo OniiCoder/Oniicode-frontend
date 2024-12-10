@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Social from "./Social";
+import Link from "next/link"
+import Social from "./Social"
 
 export default function Socials() {
     return (
