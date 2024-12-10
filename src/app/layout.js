@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import '@/app/global.css'
 import localFont from 'next/font/local'
-import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 const interFont = Inter({
