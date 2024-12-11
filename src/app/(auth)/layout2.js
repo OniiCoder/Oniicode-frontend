@@ -8,6 +8,8 @@ import { useState } from 'react'
 
 export const metadata = {
     title: 'Oniicode',
+    description: 'Futurist & Software Engineer. I live to inspire my continent and the world.'
+
 }
 
 const Layout2 = ({ children }) => {
