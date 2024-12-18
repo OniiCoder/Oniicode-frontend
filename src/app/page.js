@@ -9,7 +9,7 @@ const landing = () => {
         <Layout2>
             <Hero/>
             <Featured />
-            <FeaturedBlog />
+            {/* <FeaturedBlog /> */}
             <Footer />
         </Layout2>
     )

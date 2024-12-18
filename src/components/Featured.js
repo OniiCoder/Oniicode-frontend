@@ -59,7 +59,7 @@ export default function Featured() {
                             strokeLinejoin="round"
                         />
                     </svg>
-                    Featured
+                    Featured projects
                 </div>
 
                 <div className="grid lg:grid-cols-3 gap-4 bg-[#F5F5F5] rounded-[24px] p-[12px]">

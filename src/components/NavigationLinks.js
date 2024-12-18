@@ -9,8 +9,8 @@ export default function NavigationLinks () {
     return (
     <div className="w-full lg:w-auto flex flex-col lg:flex-row gap-2 lg:gap-[24px] mt-6 lg:mt-0">
         <NavigationLink
-            href="/landing"
-            active={isActive('/landing')}
+            href="/"
+            active={isActive('/')}
         >Home</NavigationLink>
         <NavigationLink
             href="/projects"

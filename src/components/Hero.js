@@ -29,15 +29,14 @@ export default function Hero() {
     return (
         <div className="grid lg:grid-cols-2 .text-dull-gray text-xl py-[64px] lg:py-[96px] px-5">
             <div className="flex flex-col gap-6">
-                <h1 
-                    data-aos="fade-up"
+                <h1
                     className="text-3xl lg:text-[54px] font-sans text-black"
                 >Hi 👋 I am Oniicode, </h1>
                 <p className="text-base lg:text-xl">
-                I'm a software engineer, creative entrepreneur, and content creator passionate about solving real-world problems with technology, inspiring growth, and sharing my journey.
+                I'm a software engineer, and a creative who strives to inspire his country, and continent. I love sharing my progress as I embark on this journey.
                 </p>
                 <p className="text-base lg:text-xl">
-                    On this site you’ll find out a few things about me. <br />Let’s connect
+                    On this site you’ll find out a few things about me. <br />Follow me on my socials or:
                 </p>
                 <div className="relative flex flex-col justify-end h-[70px]">
                     <div>
