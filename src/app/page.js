@@ -8,7 +8,6 @@ const landing = () => {
         <Layout2>
             <Hero/>
             <Featured />
-            {/* <FeaturedBlog /> */}
             <Footer />
         </Layout2>
     )
