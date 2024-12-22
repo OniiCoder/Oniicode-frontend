@@ -9,6 +9,7 @@ export default function Featured() {
             description:
                 'Currently building and running a platform that helps small businesses, service providers and creators manage bookings and collect payments.',
             link: 'https://buukmenow.com',
+            isStartUp: true,
         },
         {
             id: 2,
@@ -17,6 +18,7 @@ export default function Featured() {
             description:
                 'A mobile app that allows users users generate images and flyers with prompts.',
             link: 'https://testflight.apple.com/join/QNmRjxDC',
+            isStartUp: false,
         },
         {
             id: 3,
@@ -25,6 +27,7 @@ export default function Featured() {
             description:
                 'A mobile and web application that allows users browse PMS, Diesel and Gas prices from depots accross Nigeria and place order.',
             link: 'https://petrolpadi.com',
+            isStartUp: false,
         },
     ]
     return (
@@ -71,7 +74,7 @@ export default function Featured() {
                                 <div className="grid gap-4 px-5 py-5">
                                     <div className="grid gap-3">
                                         <div className="text-base lg:text-lg font-medium">
-                                            {project.title}
+                                            {project.title} {project.isStartUp && <span className='text-dull-gray'> - Startup</span>}
                                         </div>
                                         <div className="text-sm lg:text-base text-dull-gray">
                                             {project.description}
