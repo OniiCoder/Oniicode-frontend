@@ -35,7 +35,7 @@ const Blog = () => {
                     </svg>
                     Insights & adventures
                 </div>
-                <div className="grid grid-cols-2">
+                <div className="grid md:grid-cols-2">
                     <p className="text-sm lg:text-base text-dull-gray">
                         Join me on my journey through software engineering,
                         startup adventures, and personal development. Sharing

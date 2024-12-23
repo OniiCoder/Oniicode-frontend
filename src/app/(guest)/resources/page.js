@@ -42,7 +42,7 @@ const Resources = () => {
                     </svg>
                     Resources
                 </div>
-                <div className="grid grid-cols-2">
+                <div className="grid md:grid-cols-2">
                     <p className="text-sm lg:text-base text-dull-gray">
                         A curated collection of tools, apps, docs, people and
                         references that power my development workflow and
