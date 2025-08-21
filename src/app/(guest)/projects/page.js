@@ -1,5 +1,37 @@
 import Layout2 from "@/app/(auth)/layout2"
 import { getAllProjects } from "@/data/projects"
+import { Metadata } from 'next'
+
+export const metadata = {
+    title: 'Projects',
+    description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more. Expert in Laravel, Next.js, Flutter, and Shopify development.',
+    keywords: ['portfolio projects', 'DayTracker', 'BuukMeNow', 'FreshFold', 'LoomLab AI', 'Laravel projects', 'Next.js projects', 'Flutter projects', 'Shopify projects', 'ecommerce solutions', 'software development', 'Peter Peregbakumo', 'Oniicode'],
+    openGraph: {
+        title: 'Projects Portfolio | Oniicode - Peter Peregbakumo',
+        description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more. Expert in Laravel, Next.js, Flutter, and Shopify development.',
+        url: 'https://oniicode.com/projects',
+        siteName: 'Oniicode',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Oniicode Projects Portfolio',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Projects Portfolio | Oniicode - Peter Peregbakumo',
+        description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more.',
+        images: ['/og-image.jpg'],
+    },
+    alternates: {
+        canonical: '/projects',
+    },
+}
 
 const Projects = () => {
     const projects = getAllProjects()
