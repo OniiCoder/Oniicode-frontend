@@ -27,9 +27,9 @@ const RootLayout = ({ children }) => {
         </html>
     )
 }
-
 export const metadata = {
     title: 'Oniicode',
 }
 
 export default RootLayout
+

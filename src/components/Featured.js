@@ -1,39 +1,13 @@
 import Link from 'next/link'
+import { getFeaturedProjects } from '@/data/projects'
 
 export default function Featured() {
-    const projects = [
-        {
-            id: 1,
-            image: 'https://res.cloudinary.com/heyset/image/upload/v1721733939/vibraniuumtech/Xnapper-2024-07-23-11.22.11.png',
-            title: 'BuukMeNow',
-            description:
-                'Currently building and running a platform that helps small businesses, service providers and creators manage bookings and collect payments.',
-            link: 'https://buukmenow.com',
-            isStartUp: true,
-        },
-        {
-            id: 2,
-            image: 'https://res.cloudinary.com/heyset/image/upload/v1725199664/vibraniuumtech/loomlab_art.png',
-            title: 'LoomLab AI',
-            description:
-                'A mobile app that allows users users generate images and flyers with prompts.',
-            link: 'https://testflight.apple.com/join/QNmRjxDC',
-            isStartUp: false,
-        },
-        {
-            id: 3,
-            image: 'https://res.cloudinary.com/heyset/image/upload/v1721733943/vibraniuumtech/Xnapper-2024-07-23-11.21.42.png',
-            title: 'Petrol Padi',
-            description:
-                'A mobile and web application that allows users browse PMS, Diesel and Gas prices from depots accross Nigeria and place order.',
-            link: 'https://petrolpadi.com',
-            isStartUp: false,
-        },
-    ]
+    const projects = getFeaturedProjects()
+    
     return (
         <div className="grid text-xl pb-[64px] px-5">
             <div className="flex flex-col gap-6">
-                <div className="flex gap-2 text-[24px] font-sans text-black font-bold">
+                <div className="flex gap-2 text-[24px] font-sans text-black font-bold items-center">
                     <svg
                         width="24"
                         height="24"
@@ -65,25 +39,59 @@ export default function Featured() {
                     Featured projects
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-4 bg-[#F5F5F5] rounded-[24px] p-[12px]">
+                <div className="grid lg:grid-cols-2 gap-6 bg-[#F5F5F5] rounded-[24px] p-[16px]">
                     {projects &&
                         projects.map((project, index) => (
                             <div
                                 key={project.id}
-                                className={`flex flex-col ${index % 2 != 0 ? 'flex-col-reverse' : ''} justify-between gap-[11px] bg-white rounded-[12px]`}>
+                                className={`flex flex-col ${index % 2 != 0 ? 'flex-col-reverse' : ''} justify-between gap-[11px] bg-white rounded-[16px] overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}>
+                                
                                 <div className="grid gap-4 px-5 py-5">
                                     <div className="grid gap-3">
-                                        <div className="text-base lg:text-lg font-medium">
-                                            {project.title} {project.isStartUp && <span className='text-dull-gray'> - Startup</span>}
+                                        <div className="flex items-center justify-between">
+                                            <div className="text-base lg:text-lg font-semibold">
+                                                {project.title}
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                {project.isStartUp && (
+                                                    <span className='px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium'>
+                                                        Startup
+                                                    </span>
+                                                )}
+                                                <span className={`px-2 py-1 text-xs rounded-full font-medium ${
+                                                    project.status === 'Live' 
+                                                        ? 'bg-blue-100 text-blue-700' 
+                                                        : project.status === 'Beta Testing'
+                                                        ? 'bg-yellow-100 text-yellow-700'
+                                                        : project.status === 'In Development'
+                                                        ? 'bg-purple-100 text-purple-700'
+                                                        : 'bg-gray-100 text-gray-700'
+                                                }`}>
+                                                    {project.status}
+                                                </span>
+                                            </div>
                                         </div>
-                                        <div className="text-sm lg:text-base text-dull-gray">
+                                        
+                                        <div className="text-sm lg:text-base text-dull-gray leading-relaxed">
                                             {project.description}
                                         </div>
+                                        
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.tech.map((tech, techIndex) => (
+                                                <span
+                                                    key={techIndex}
+                                                    className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md font-medium"
+                                                >
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
+                                    
                                     <Link
                                         href={project.link}
                                         target="_blank"
-                                        className="flex justify-between items-center text-sm font-medium border-t-[1px] border-t-[#FBFBFB] py-[12px]">
+                                        className="flex justify-between items-center text-sm font-medium border-t-[1px] border-t-[#FBFBFB] py-[12px] hover:text-[#2F8519] transition-colors">
                                         View Project
                                         <svg
                                             width="16"
@@ -93,7 +101,7 @@ export default function Featured() {
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M9.62 3.95337L13.6667 8.00004L9.62 12.0467"
-                                                stroke="#292929"
+                                                stroke="currentColor"
                                                 strokeWidth="1.5"
                                                 strokeMiterlimit="10"
                                                 strokeLinecap="round"
@@ -101,7 +109,7 @@ export default function Featured() {
                                             />
                                             <path
                                                 d="M2.33334 8H13.5533"
-                                                stroke="#292929"
+                                                stroke="currentColor"
                                                 strokeWidth="1.5"
                                                 strokeMiterlimit="10"
                                                 strokeLinecap="round"
@@ -110,44 +118,51 @@ export default function Featured() {
                                         </svg>
                                     </Link>
                                 </div>
-                                <img
-                                    className="w-full h-[240px] lg:h-[324px] rounded-[12px] object-cover"
-                                    src={project.image}
-                                />
+                                
+                                <div className="relative group">
+                                    <img
+                                        className="w-full h-[240px] lg:h-[324px] rounded-[12px] object-cover transition-transform duration-300 group-hover:scale-105"
+                                        src={project.image}
+                                        alt={project.title}
+                                    />
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-[12px]"></div>
+                                </div>
                             </div>
                         ))}
                 </div>
-                <Link
-                    href="https://vibraniuumtech.com"
-                    target="_blank"
-                    className="flex gap-2 items-center text-base font-medium underline">
-                    See more projects
-                    <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.62 3.95337L13.6667 8.00004L9.62 12.0467"
-                            stroke="#292929"
-                            strokeWidth="1.5"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                        <path
-                            d="M2.33334 8H13.5533"
-                            stroke="#292929"
-                            strokeWidth="1.5"
-                            strokeMiterlimit="10"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                </Link>
+                
+                <div className="text-center">
+                    <Link
+                        href="https://vibraniuumtech.com"
+                        target="_blank"
+                        className="inline-flex gap-2 items-center text-base font-medium text-[#2F8519] hover:text-[#FA812F] transition-colors underline decoration-2 underline-offset-4">
+                        See more projects
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.62 3.95337L13.6667 8.00004L9.62 12.0467"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                            <path
+                                d="M2.33334 8H13.5533"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeMiterlimit="10"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </Link>
+                </div>
             </div>
-            <div></div>
         </div>
     )
 }
