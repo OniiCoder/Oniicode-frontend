@@ -1,6 +1,5 @@
 import Layout2 from "@/app/(auth)/layout2"
 import { getAllProjects } from "@/data/projects"
-import { Metadata } from 'next'
 
 export const metadata = {
     title: 'Projects',

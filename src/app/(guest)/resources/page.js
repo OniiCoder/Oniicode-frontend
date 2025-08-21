@@ -1,6 +1,5 @@
 import Layout2 from '@/app/(auth)/layout2'
 import Resources from '@/components/Resources'
-import { Metadata } from 'next'
 
 export const metadata = {
     title: 'Development Resources & Tools | Oniicode',

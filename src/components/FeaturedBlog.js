@@ -154,7 +154,6 @@ export default function FeaturedBlog() {
                     </svg>
                 </Link>
             </div>
-            <div></div>
         </div>
     )
 }

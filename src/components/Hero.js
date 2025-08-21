@@ -1,6 +1,5 @@
 "use client"
 import { useEffect } from "react"
-import PrimaryButton from "./PrimaryButton"
 import Aos from "aos"
 
 export default function Hero() {

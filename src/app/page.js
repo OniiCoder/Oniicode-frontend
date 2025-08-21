@@ -3,10 +3,8 @@ import Featured from "@/components/Featured"
 import Footer from "@/components/Footer"
 import Hero from "@/components/Hero"
 import Skills from "@/components/Skills"
-import Talks from "@/components/Talks"
 import OnlineFeatures from "@/components/OnlineFeatures"
 import CallToAction from "@/components/CallToAction"
-import { Metadata } from 'next'
 
 export const metadata = {
     title: 'Home',

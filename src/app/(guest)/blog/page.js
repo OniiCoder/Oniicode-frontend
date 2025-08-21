@@ -35,13 +35,8 @@ const Blog = () => {
                     </svg>
                     Insights & adventures
                 </div>
-                <div className="grid md:grid-cols-2">
-                    <p className="text-sm lg:text-base text-dull-gray">
-                        Join me on my journey through software engineering,
-                        startup adventures, and personal development. Sharing
-                        real experiences, practical tips, and lessons learned
-                        along the way.
-                    </p>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Blog posts will be displayed here */}
                 </div>
                 <div className='mt-4 inline-flex'>
                     <div className="flex items-center gap-[11px] border-[1px] border-[#E2E2E2] rounded-full p-2">
