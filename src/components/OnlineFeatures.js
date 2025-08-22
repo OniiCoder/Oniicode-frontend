@@ -57,6 +57,26 @@ export default function OnlineFeatures() {
             date: "2025",
             type: "Event Recognition",
             isVerified: true
+        },
+        {
+            id: 6,
+            title: "BlueSPACE Innovation Hub Panel - TalentFACTORY Networking Event",
+            description: "Featured participant in BlueSPACE Innovation Hub's TalentFACTORY Networking and Onboarding Mixer, recognized for contributions to career development and tech training initiatives",
+            link: "https://www.linkedin.com/posts/bluespacehub_talentfactory-networking-careergrowth-activity-7338185260309897216-5JQ-?utm_medium=ios_app&rcm=ACoAACTQ6O4BjK34TUcRv9Bc02fwt-fONzNbJ-A&utm_source=social_share_send&utm_campaign=copy_link",
+            source: "BlueSPACE Innovation Hub",
+            date: "2024",
+            type: "Event Recognition",
+            isVerified: true
+        },
+        {
+            id: 7,
+            title: "AfroPark Panel - Enterprise Software, Digital Marketing & Fintech",
+            description: "Panelist at AfroPark's thought-provoking discussions on enterprise software, digital marketing, and fintech trends shaping Africa's digital future",
+            link: "https://www.linkedin.com/posts/afro-park_enterpisesoftware-digitalmarketing-fintech-activity-7117596716299612160-fCna?utm_medium=ios_app&rcm=ACoAACTQ6O4BjK34TUcRv9Bc02fwt-fONzNbJ-A&utm_source=social_share_send&utm_campaign=copy_link",
+            source: "AfroPark",
+            date: "2024",
+            type: "Panel Discussion",
+            isVerified: true
         }
     ]
 
@@ -93,7 +113,11 @@ export default function OnlineFeatures() {
                                                 ? 'bg-purple-100 text-purple-700'
                                                 : feature.type === 'Community Recognition'
                                                 ? 'bg-orange-100 text-orange-700'
-                                                : 'bg-yellow-100 text-yellow-700'
+                                                : feature.type === 'Event Recognition'
+                                                ? 'bg-yellow-100 text-yellow-700'
+                                                : feature.type === 'Panel Discussion'
+                                                ? 'bg-indigo-100 text-indigo-700'
+                                                : 'bg-gray-100 text-gray-700'
                                         }`}>
                                             {feature.type}
                                         </span>
