@@ -10,7 +10,7 @@ export default function Skills() {
     const skillCategories = [
         {
             title: "Frontend Development",
-            skills: ["Tailwind CSS", "JavaScript", "HTML/CSS", "Livewire", "AlpineJs"],
+            skills: ["Tailwind CSS", "React & Next.js", "HTML/CSS", "Livewire"],
             icon: "🎨",
             color: "from-blue-500 to-cyan-500"
         },
