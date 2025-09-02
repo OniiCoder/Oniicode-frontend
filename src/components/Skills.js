@@ -34,7 +34,7 @@ export default function Skills() {
         },
         {
             title: "Tools & Platforms",
-            skills: ["Git", "Docker", "AWS", "Vercel", "Netlify", "Figma"],
+            skills: ["Git", "AWS", "Vercel", "Figma"],
             icon: "🛠️",
             color: "from-gray-500 to-gray-700"
         }
