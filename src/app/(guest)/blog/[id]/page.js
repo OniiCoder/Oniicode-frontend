@@ -9,10 +9,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const postData = await getPostData(params.id)
+  const imageUrl = postData.image ? `https://oniicode.com${postData.image}` : null
+  const imageType = postData.image?.endsWith('.svg') ? 'image/svg+xml' : 'image/png'
+  
   return {
     title: `${postData.title} | Peter Onisha's Blog`,
     description: postData.excerpt,
     keywords: postData.tags ? postData.tags.join(', ') : '',
+    authors: [{ name: postData.author }],
     openGraph: {
       title: postData.title,
       description: postData.excerpt,
@@ -20,29 +24,89 @@ export async function generateMetadata({ params }) {
       publishedTime: postData.date,
       authors: [postData.author],
       tags: postData.tags,
-      images: postData.image ? [
+      url: `https://oniicode.com/blog/${params.id}`,
+      siteName: 'Oniicode',
+      images: imageUrl ? [
         {
-          url: postData.image,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: postData.title,
+          type: imageType,
         }
       ] : [],
     },
     twitter: {
       card: 'summary_large_image',
+      site: '@oniicode',
+      creator: '@oniicode',
       title: postData.title,
       description: postData.excerpt,
-      images: postData.image ? [postData.image] : [],
+      images: imageUrl ? [imageUrl] : [],
+    },
+    alternates: {
+      canonical: `/blog/${params.id}`,
     },
   }
 }
 
 const BlogPost = async ({ params }) => {
   const postData = await getPostData(params.id)
+  const imageUrl = postData.image ? `https://oniicode.com${postData.image}` : null
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": postData.title,
+    "description": postData.excerpt,
+    "author": {
+      "@type": "Person",
+      "name": postData.author,
+      "url": "https://oniicode.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Oniicode",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://oniicode.com/logo.png"
+      }
+    },
+    "datePublished": postData.date,
+    "dateModified": postData.date,
+    "url": `https://oniicode.com/blog/${params.id}`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://oniicode.com/blog/${params.id}`
+    },
+    "keywords": postData.tags ? postData.tags.join(', ') : '',
+    ...(imageUrl && {
+      "image": {
+        "@type": "ImageObject",
+        "url": imageUrl,
+        "width": 1200,
+        "height": 630
+      }
+    })
+  }
 
   return (
     <Layout2>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      {/* Additional meta tags for better SEO */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/svg+xml" />
+      <meta name="twitter:image:alt" content={postData.title} />
+      <meta name="article:author" content={postData.author} />
+      <meta name="article:published_time" content={postData.date} />
+      <meta name="article:section" content="Personal" />
+      {postData.tags && postData.tags.map((tag, index) => (
+        <meta key={index} name="article:tag" content={tag} />
+      ))}
       <div className="mt-4 px-5 max-w-4xl mx-auto">
         {/* Back button */}
         <Link 

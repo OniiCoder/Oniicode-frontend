@@ -5,7 +5,7 @@ author: "Peter Onisha"
 excerpt: "A reflection on burnout, the struggle to unwind, and the journey of self-discovery through writing."
 slug: "finding-my-way-back-to-unwinding-personal-reflection-burnout"
 tags: ["personal", "burnout", "reflection", "writing"]
-image: "/images/blog/finding-my-way-back-to-unwinding-og.svg"
+image: "/images/blog/finding-my-way-back-to-unwinding-og.png"
 ---
 
 Today I was driving back home from the market. Don't ask me what I went to the market to do; a lot. I was super exhausted and a friend came to mind when I drove past her office. My thought at that moment was to pick her from work if she was at the office and just talk with someone as I drove home.
