@@ -24,7 +24,7 @@ I was quiet for a while and she kept on saying "hello.. hello…".
 
 In my mind, I had travelled into deep thoughts. I really wanted to respond but then couldn't pick on anything that I had done recently to unwind.
 
-Earlier in the day, I had made a statement in work group chat that had just my friends; "I perceive burn out close by" and they replied:
+Earlier in the day, I had made a statement in my work group chat that had just my friends; "I perceive burn out close by" and they replied:
 
 - "Slow down o"
 - "or look for another activity"
