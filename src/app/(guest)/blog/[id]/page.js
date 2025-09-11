@@ -1,6 +1,7 @@
 import Layout2 from '@/app/(auth)/layout2'
 import Link from 'next/link'
 import { getAllPostIds, getPostData } from '@/lib/posts'
+import ExpandableImage from '@/components/ExpandableImage'
 
 export async function generateStaticParams() {
   const paths = getAllPostIds()
@@ -50,8 +51,7 @@ export async function generateMetadata({ params }) {
   }
 }
 
-const BlogPost = async ({ params }) => {
-  const postData = await getPostData(params.id)
+const BlogPost = ({ params, postData }) => {
   const imageUrl = postData.image ? `https://oniicode.com${postData.image}` : null
 
   const structuredData = {
@@ -135,13 +135,10 @@ const BlogPost = async ({ params }) => {
         <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
           {/* Featured image */}
           {postData.image && (
-            <div className="w-full h-64 bg-gray-100 flex items-center justify-center">
-              <img 
-                src={postData.image} 
-                alt={postData.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <ExpandableImage 
+              src={postData.image} 
+              alt={postData.title}
+            />
           )}
           
           <div className="p-8">
@@ -202,4 +199,8 @@ const BlogPost = async ({ params }) => {
   )
 }
 
-export default BlogPost
+export default async function BlogPostPage({ params }) {
+  const postData = await getPostData(params.id)
+  
+  return <BlogPost params={params} postData={postData} />
+}
