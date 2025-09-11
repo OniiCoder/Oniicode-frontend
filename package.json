@@ -13,9 +13,13 @@
     "@headlessui/react": "^1.4.2",
     "aos": "^2.3.4",
     "axios": "^0.21.1",
+    "gray-matter": "^4.0.3",
     "next": "^14.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remark": "^15.0.1",
+    "remark-breaks": "^4.0.0",
+    "remark-html": "^16.0.1",
     "swr": "^1.3.0"
   },
   "devDependencies": {

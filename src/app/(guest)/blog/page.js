@@ -1,6 +1,9 @@
 import Layout2 from '@/app/(auth)/layout2'
+import Link from 'next/link'
+import { getSortedPostsData } from '@/lib/posts'
 
-const Blog = () => {
+const Blog = async () => {
+  const allPostsData = await getSortedPostsData()
     return (
         <Layout2>
             <div className="mt-4 px-5">
@@ -12,7 +15,7 @@ const Blog = () => {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
-                            d="M13.01 2.91995L18.91 5.53995C20.61 6.28995 20.61 7.52995 18.91 8.27995L13.01 10.8999C12.34 11.1999 11.24 11.1999 10.57 10.8999L4.67002 8.27995C2.97002 7.52995 2.97002 6.28995 4.67002 5.53995L10.57 2.91995C11.24 2.61995 12.34 2.61995 13.01 2.91995Z"
+                            d="M13.01 2.91995L18.91 5.53995C20.61 6.28995 20.61 7.52995 18.91 8.27995L13.01 10.8999C11.24 11.1999 11.24 11.1999 10.57 10.8999L4.67002 8.27995C2.97002 7.52995 2.97002 6.28995 4.67002 5.53995L10.57 2.91995C11.24 2.61995 12.34 2.61995 13.01 2.91995Z"
                             stroke="#101010"
                             strokeWidth="1.5"
                             strokeLinecap="round"
@@ -35,17 +38,45 @@ const Blog = () => {
                     </svg>
                     Insights & adventures
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {/* Blog posts will be displayed here */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                    {allPostsData.map(({ id, date, title, excerpt, author, tags, slug }) => (
+                        <Link key={id} href={`/blog/${slug || id}`}>
+                            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                    <span>{new Date(date).toLocaleDateString()}</span>
+                                    <span>•</span>
+                                    <span>{author}</span>
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                                    {title}
+                                </h3>
+                                <p className="text-gray-600 mb-4 line-clamp-3">
+                                    {excerpt}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    {tags && tags.map((tag, index) => (
+                                        <span 
+                                            key={index}
+                                            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </Link>
+                    ))}
                 </div>
-                <div className='mt-4 inline-flex'>
-                    <div className="flex items-center gap-[11px] border-[1px] border-[#E2E2E2] rounded-full p-2">
-                        <div>
-                            <div className="bg-[#FAB12F] w-2 h-2 rounded-full"></div>
+                {allPostsData.length === 0 && (
+                    <div className='mt-8 inline-flex'>
+                        <div className="flex items-center gap-[11px] border-[1px] border-[#E2E2E2] rounded-full p-2">
+                            <div>
+                                <div className="bg-[#FAB12F] w-2 h-2 rounded-full"></div>
+                            </div>
+                            <div className="text-xs">coming soon</div>
                         </div>
-                        <div className="text-xs">coming soon</div>
                     </div>
-                </div>
+                )}
             </div>
         </Layout2>
     )
