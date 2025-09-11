@@ -62,6 +62,13 @@ const RootLayout = ({ children }) => {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 
+                {/* GoatCounter Analytics */}
+                <script 
+                    data-goatcounter="https://oniicode.goatcounter.com/count"
+                    async 
+                    src="//gc.zgo.at/count.js"
+                />
+                
                 {/* Structured Data */}
                 <script
                     type="application/ld+json"
