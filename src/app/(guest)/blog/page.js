@@ -39,29 +39,42 @@ const Blog = async () => {
                     Insights & adventures
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                    {allPostsData.map(({ id, date, title, excerpt, author, tags, slug }) => (
+                    {allPostsData.map(({ id, date, title, excerpt, author, tags, slug, image }) => (
                         <Link key={id} href={`/blog/${slug || id}`}>
-                            <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                                <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                                    <span>{new Date(date).toLocaleDateString()}</span>
-                                    <span>•</span>
-                                    <span>{author}</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                                    {title}
-                                </h3>
-                                <p className="text-gray-600 mb-4 line-clamp-3">
-                                    {excerpt}
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                                    {tags && tags.map((tag, index) => (
-                                        <span 
-                                            key={index}
-                                            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                                {/* Article thumbnail */}
+                                {image && (
+                                    <div className="w-full h-48 bg-gray-100">
+                                        <img 
+                                            src={image} 
+                                            alt={title}
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                )}
+                                
+                                <div className="p-6">
+                                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <span>{new Date(date).toLocaleDateString()}</span>
+                                        <span>•</span>
+                                        <span>{author}</span>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                                        {title}
+                                    </h3>
+                                    <p className="text-gray-600 mb-4 line-clamp-3">
+                                        {excerpt}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {tags && tags.map((tag, index) => (
+                                            <span 
+                                                key={index}
+                                                className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </Link>

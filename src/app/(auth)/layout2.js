@@ -4,6 +4,7 @@ import ApplicationLogo from '@/components/ApplicationLogo'
 import NavigationLinks from '@/components/NavigationLinks'
 import PrimaryButton from '@/components/PrimaryButton'
 import Socials from '@/components/Socials'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export const metadata = {
@@ -22,7 +23,9 @@ const Layout2 = ({ children }) => {
                     <div className="bg-white">
                         <div className="max-w-[1216px] mx-auto lg:flex items-center max-w-[1440px] mx-auto py-5 lg:py-5 px-4">
                             <div className="flex justify-between">
-                                <ApplicationLogo />
+                                <Link href="/">
+                                    <ApplicationLogo />
+                                </Link>
                                 <div className="flex lg:hidden">
                                     <button
                                         onClick={() =>

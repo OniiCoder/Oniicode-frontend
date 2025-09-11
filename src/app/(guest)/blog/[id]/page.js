@@ -20,11 +20,20 @@ export async function generateMetadata({ params }) {
       publishedTime: postData.date,
       authors: [postData.author],
       tags: postData.tags,
+      images: postData.image ? [
+        {
+          url: postData.image,
+          width: 1200,
+          height: 630,
+          alt: postData.title,
+        }
+      ] : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: postData.title,
       description: postData.excerpt,
+      images: postData.image ? [postData.image] : [],
     },
   }
 }
@@ -60,6 +69,17 @@ const BlogPost = async ({ params }) => {
 
         {/* Article header */}
         <article className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          {/* Featured image */}
+          {postData.image && (
+            <div className="w-full h-64 bg-gray-100 flex items-center justify-center">
+              <img 
+                src={postData.image} 
+                alt={postData.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
+          
           <div className="p-8">
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
               <span>{new Date(postData.date).toLocaleDateString()}</span>
