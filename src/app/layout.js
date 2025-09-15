@@ -99,7 +99,7 @@ const RootLayout = ({ children }) => {
                                 "Laravel", "Next.js", "Flutter", "Shopify", "Ecommerce", 
                                 "Livewire", "Tailwind CSS", "AWS", "PHP", "React"
                             ],
-                            "description": "Software Engineer and Creative Visionary specializing in ecommerce solutions, Shopify integrations, and innovative technology development."
+                            "description": "Senior Software Engineer, AI Enthusiast and Creative Visionary specializing in ecommerce solutions, custom solutions, Shopify integrations, and innovative technology development."
                         })
                     }}
                 />
