@@ -41,42 +41,42 @@ export default function Skills() {
     ]
 
     return (
-        <div className="py-16 px-5 bg-gradient-to-br from-gray-50 to-white">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16" data-aos="fade-up" data-aos-duration="800">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+        <div className="py-8 px-4 bg-gradient-to-br from-gray-50 to-white">
+            <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-8" data-aos="fade-up" data-aos-duration="800">
+                    <h2 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                         Skills & Technologies
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-sm text-gray-600 max-w-lg mx-auto">
                         I've worked with a diverse range of technologies to build scalable, user-friendly applications
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                     {skillCategories.map((category, index) => (
                         <div
                             key={index}
-                            className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                            className="group bg-white rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 border border-gray-100 hover:border-gray-200"
                             data-aos="fade-up"
                             data-aos-duration="800"
                             data-aos-delay={index * 100}
                         >
-                            <div className="text-center mb-6">
-                                <div className="text-4xl mb-4">{category.icon}</div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                            <div className="text-center mb-3">
+                                <div className="text-lg mb-1">{category.icon}</div>
+                                <h3 className="text-sm font-semibold text-gray-900 mb-1">
                                     {category.title}
                                 </h3>
-                                <div className={`w-16 h-1 bg-gradient-to-r ${category.color} rounded-full mx-auto`}></div>
+                                <div className={`w-8 h-0.5 bg-gradient-to-r ${category.color} rounded-full mx-auto`}></div>
                             </div>
 
-                            <div className="space-y-3">
+                            <div className="space-y-1">
                                 {category.skills.map((skill, skillIndex) => (
                                     <div
                                         key={skillIndex}
-                                        className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg group-hover:bg-gray-100 transition-colors"
+                                        className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded group-hover:bg-gray-100 transition-colors"
                                     >
-                                        <div className={`w-2 h-2 bg-gradient-to-r ${category.color} rounded-full`}></div>
-                                        <span className="text-gray-700 font-medium">{skill}</span>
+                                        <div className={`w-1 h-1 bg-gradient-to-r ${category.color} rounded-full`}></div>
+                                        <span className="text-xs text-gray-700 font-medium">{skill}</span>
                                     </div>
                                 ))}
                             </div>

@@ -36,14 +36,14 @@ export default function Hero() {
                 
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <p className="text-base lg:text-xl leading-relaxed">
-                        I'm a <span className="font-semibold">software engineer</span> and a <span className="font-semibold">creative visionary</span> who strives to inspire my country, and continent through innovative technology solutions.
+                    I’m a <span className="font-semibold">Software & AI Automations Engineer</span> helping people and businesses unlock growth with innovative technology.
+                    I design smart solutions that save time, cut costs, and create impact.
                     </p>
                 </div>
 
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <p className="text-base lg:text-xl leading-relaxed">
-                        I love sharing my progress as I embark on this journey of building solutions that make a difference. <br />
-                        <span className="font-medium">Let's connect and create something amazing together!</span>
+                    🚀 Let’s explore custom solutions and how AI and automation can transform your ideas into reality.
                     </p>
                 </div>
                 
