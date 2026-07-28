@@ -10,7 +10,6 @@ import FeaturedWork from './FeaturedWork'
 import Process from './Process'
 import WhyWorkWithMe from './WhyWorkWithMe'
 import Testimonials from './Testimonials'
-import ContentShowcase from './ContentShowcase'
 import FAQ from './FAQ'
 import FinalCTA from './FinalCTA'
 import Footer from './Footer'
@@ -62,10 +61,7 @@ export default function V2LandingPage() {
         {/* Section 7: Testimonials */}
         <Testimonials />
 
-        {/* Section 8: Content & Reels */}
-        <ContentShowcase />
-
-        {/* Section 9: FAQ */}
+        {/* Section 8: FAQ */}
         <FAQ onBookCall={handleBookCall} />
 
         {/* Section 10: Final CTA */}

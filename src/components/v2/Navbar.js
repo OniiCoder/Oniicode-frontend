@@ -72,12 +72,6 @@ export default function Navbar({ onBookCall, onOpenContact }) {
               Why Us
             </a>
             <a
-              href="#content"
-              className="px-3 py-1.5 text-xs font-medium text-gray-700 hover:text-black hover:bg-white rounded-full transition-all"
-            >
-              Reels
-            </a>
-            <a
               href="#faq"
               className="px-3 py-1.5 text-xs font-medium text-gray-700 hover:text-black hover:bg-white rounded-full transition-all"
             >
@@ -153,13 +147,6 @@ export default function Navbar({ onBookCall, onOpenContact }) {
               className="px-4 py-2 text-sm text-gray-800 hover:text-black rounded-lg hover:bg-gray-100 font-medium"
             >
               Why Work With Me
-            </a>
-            <a
-              href="#content"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2 text-sm text-gray-800 hover:text-black rounded-lg hover:bg-gray-100 font-medium"
-            >
-              Reels & Content
             </a>
             <a
               href="#faq"

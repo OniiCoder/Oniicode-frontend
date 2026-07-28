@@ -75,7 +75,6 @@ export default function Footer({ onBookCall }) {
               <li><a href="#work" className="hover:text-black transition-colors">Featured Work</a></li>
               <li><a href="#process" className="hover:text-black transition-colors">Process</a></li>
               <li><a href="#why" className="hover:text-black transition-colors">Why Work With Me</a></li>
-              <li><a href="#content" className="hover:text-black transition-colors">Reels & Content</a></li>
               <li><a href="#faq" className="hover:text-black transition-colors">FAQ</a></li>
             </ul>
           </div>
