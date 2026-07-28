@@ -116,8 +116,8 @@ export default function Footer({ onBookCall }) {
             &copy; {new Date().getFullYear()} Oniicode (Peter Onisha Peregbakumo). All rights reserved.
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="hover:text-gray-700 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-gray-700 transition-colors">Terms</a>
+            <Link href="/privacy" className="hover:text-gray-700 transition-colors">Privacy</Link>
+            <Link href="/terms" className="hover:text-gray-700 transition-colors">Terms</Link>
           </div>
         </div>
       </div>
