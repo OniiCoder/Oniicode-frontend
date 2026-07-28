@@ -35,14 +35,14 @@ export default function Hero({ onBookCall }) {
             className="px-7 py-3.5 bg-black text-white hover:bg-gray-800 font-semibold rounded-xl text-sm transition-all flex items-center justify-center space-x-2 shadow-md"
           >
             <Calendar className="w-4 h-4 text-emerald-400" />
-            <span>Book a 30-Min Strategy Call</span>
+            <span className="text-nowrap">Book a 30-Min Strategy Call</span>
           </button>
 
           <a
             href="#work"
             className="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-800 font-semibold rounded-xl text-sm border border-gray-200 shadow-sm transition-all flex items-center justify-center space-x-2"
           >
-            <span>See Stuff I've Built</span>
+            <span className='text-nowrap'>See Stuff I've Built</span>
             <ArrowDown className="w-4 h-4 text-gray-500" />
           </a>
         </div>
