@@ -147,7 +147,7 @@ export default function Resources() {
                             I'd love to hear about it and potentially add it to this collection!
                         </p>
                         <a
-                            href="mailto:perezpeter32@gmail.com?subject=Resource%20Recommendation"
+                            href="mailto:peter@buukmenow.com?subject=Resource%20Recommendation"
                             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-[#2F8519] bg-white hover:bg-gray-100 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

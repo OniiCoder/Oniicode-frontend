@@ -1,18 +1,24 @@
-import Layout2 from "@/app/(auth)/layout2"
-import Featured from "@/components/Featured"
-import Footer from "@/components/Footer"
-import Hero from "@/components/Hero"
-import Skills from "@/components/Skills"
-import OnlineFeatures from "@/components/OnlineFeatures"
-import CallToAction from "@/components/CallToAction"
+import V2LandingPage from '@/components/v2/V2LandingPage'
 
 export const metadata = {
-    title: 'Home',
-    description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, Next.js, Flutter, Shopify, and modern web technologies.',
-    keywords: ['software engineer', 'ecommerce expert', 'Shopify developer', 'Laravel developer', 'Next.js developer', 'Flutter developer', 'African tech entrepreneur', 'BuukMeNow', 'DayTracker', 'FreshFold', 'sleep technology', '3zbrands', 'Peter Peregbakumo'],
+    title: 'AI Software Development Studio | Oniicode',
+    description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
+    keywords: [
+        'AI Development',
+        'Laravel Development',
+        'Startup CTO',
+        'Custom Software',
+        'SaaS Development',
+        'AI Automation',
+        'AI Product Studio',
+        'Peter Onisha Peregbakumo',
+        'BuukMeNow',
+        'Voice AI',
+        'Next.js AI',
+    ],
     openGraph: {
-        title: 'Oniicode - Peter Peregbakumo | Software Engineer & Ecommerce Expert',
-        description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, AI, Next.js, Flutter, Shopify, and modern web technologies.',
+        title: 'AI Software Development Studio | Oniicode',
+        description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
         url: 'https://oniicode.com',
         siteName: 'Oniicode',
         images: [
@@ -20,7 +26,7 @@ export const metadata = {
                 url: '/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Peter Peregbakumo - Software Engineer & Ecommerce Expert',
+                alt: 'AI Software Development Studio | Oniicode',
             },
         ],
         locale: 'en_US',
@@ -28,8 +34,8 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Oniicode - Peter Peregbakumo | Software Engineer & Ecommerce Expert',
-        description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands.',
+        title: 'AI Software Development Studio | Oniicode',
+        description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
         images: ['/og-image.jpg'],
     },
     alternates: {
@@ -37,18 +43,6 @@ export const metadata = {
     },
 }
 
-const landing = () => {
-    return (
-        <Layout2>
-            <Hero/>
-            <Skills />
-            {/* <Talks /> */}
-            <OnlineFeatures />
-            <Featured />
-            <CallToAction />
-            <Footer />
-        </Layout2>
-    )
+export default function Page() {
+    return <V2LandingPage />
 }
-
-export default landing

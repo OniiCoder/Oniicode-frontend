@@ -4,9 +4,9 @@ import { getAllProjects } from "@/data/projects"
 export const metadata = {
     title: 'Projects',
     description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more. Expert in Laravel, Next.js, Flutter, and Shopify development.',
-    keywords: ['portfolio projects', 'DayTracker', 'BuukMeNow', 'FreshFold', 'LoomLab AI', 'Laravel projects', 'Next.js projects', 'Flutter projects', 'Shopify projects', 'ecommerce solutions', 'software development', 'Peter Peregbakumo', 'Oniicode'],
+    keywords: ['portfolio projects', 'DayTracker', 'BuukMeNow', 'FreshFold', 'LoomLab AI', 'Laravel projects', 'Next.js projects', 'Flutter projects', 'Shopify projects', 'ecommerce solutions', 'software development', 'Peter Onisha Peregbakumo', 'Oniicode'],
     openGraph: {
-        title: 'Projects Portfolio | Oniicode - Peter Peregbakumo',
+        title: 'Projects Portfolio | Oniicode - Peter Onisha Peregbakumo',
         description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more. Expert in Laravel, Next.js, Flutter, and Shopify development.',
         url: 'https://oniicode.com/projects',
         siteName: 'Oniicode',
@@ -23,7 +23,7 @@ export const metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Projects Portfolio | Oniicode - Peter Peregbakumo',
+        title: 'Projects Portfolio | Oniicode - Peter Onisha Peregbakumo',
         description: 'Explore my portfolio of innovative projects including DayTracker, BuukMeNow, FreshFold, LoomLab AI, and more.',
         images: ['/og-image.jpg'],
     },
@@ -180,7 +180,7 @@ const Projects = () => {
                             Have a project in mind? Let's collaborate and bring your ideas to life!
                         </p>
                         <a
-                            href="mailto:perezpeter32@gmail.com"
+                            href="mailto:peter@buukmenow.com"
                             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-[#2F8519] to-[#FA812F] rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

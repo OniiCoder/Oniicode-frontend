@@ -9,7 +9,8 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                sans: ['var(--font-oniicode)']
+                sans: ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                oniicode: ['var(--font-oniicode)', 'sans-serif']
             },
             animation: {
                 'bounce': 'bounce 1s infinite',

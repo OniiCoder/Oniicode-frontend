@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 const interFont = Inter({
     subsets: ['latin'],
     display: 'swap',
+    variable: '--font-inter',
 })
 
 const oniicodeFont = localFont({
@@ -22,7 +23,7 @@ const RootLayout = ({ children }) => {
     return (
         <html
             lang="en"
-            className={`${interFont.className} ${oniicodeFont.variable}`}>
+            className={`${interFont.className} ${interFont.variable} ${oniicodeFont.variable}`}>
             <head>
                 {/* Primary Meta Tags */}
                 <meta charSet="utf-8" />
@@ -45,9 +46,9 @@ const RootLayout = ({ children }) => {
                 <meta name="twitter:creator" content="@oniicode" />
                 
                 {/* Additional SEO */}
-                <meta name="author" content="Peter Peregbakumo (Oniicode)" />
+                <meta name="author" content="Peter Onisha Peregbakumo (Oniicode)" />
                 <meta name="keywords" content="software engineer, ecommerce expert, Shopify developer, Laravel developer, Next.js developer, Flutter developer, African tech entrepreneur, BuukMeNow, DayTracker, FreshFold, sleep technology, 3zbrands" />
-                <meta name="description" content="Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, Next.js, Flutter, Shopify, and modern web technologies." />
+                <meta name="description" content="Peter Onisha Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, Next.js, Flutter, Shopify, and modern web technologies." />
                 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://oniicode.com" />
@@ -76,13 +77,13 @@ const RootLayout = ({ children }) => {
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Person",
-                            "name": "Peter Peregbakumo",
+                            "name": "Peter Onisha Peregbakumo",
                             "alternateName": "Oniicode",
                             "url": "https://oniicode.com",
                             "image": "https://oniicode.com/og-image.jpg",
                             "sameAs": [
-                                "https://linkedin.com/in/oniicode",
-                                "https://github.com/oniicode",
+                                "https://www.linkedin.com/in/peter-onisha-peregbakumo/",
+                                "https://github.com/OniiCoder",
                                 "https://twitter.com/oniicode"
                             ],
                             "jobTitle": "Software Engineer & Ecommerce Expert",
@@ -111,13 +112,13 @@ const RootLayout = ({ children }) => {
 
 export const metadata = {
     title: {
-        default: 'Oniicode - Peter Peregbakumo | Software Engineer & Ecommerce Expert',
+        default: 'Oniicode - Peter Onisha Peregbakumo | Software Engineer & Ecommerce Expert',
         template: '%s | Oniicode'
     },
-    description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, AI, Next.js, Flutter, Shopify, and modern web technologies.',
+    description: 'Peter Onisha Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, AI, Next.js, Flutter, Shopify, and modern web technologies.',
     keywords: ['software engineer', 'ecommerce expert', 'Shopify developer', 'Laravel developer', 'Next.js developer', 'Flutter developer', 'African tech entrepreneur', 'BuukMeNow', 'DayTracker', 'FreshFold', 'sleep technology', '3zbrands'],
-    authors: [{ name: 'Peter Peregbakumo', url: 'https://oniicode.com' }],
-    creator: 'Peter Peregbakumo',
+    authors: [{ name: 'Peter Onisha Peregbakumo', url: 'https://oniicode.com' }],
+    creator: 'Peter Onisha Peregbakumo',
     publisher: 'Oniicode',
     formatDetection: {
         email: false,
@@ -133,21 +134,21 @@ export const metadata = {
         locale: 'en_US',
         url: 'https://oniicode.com',
         siteName: 'Oniicode',
-        title: 'Oniicode - Peter Peregbakumo | Software Engineer & Ecommerce Expert',
-        description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, AI, Next.js, Flutter, Shopify, and modern web technologies.',
+        title: 'Oniicode - Peter Onisha Peregbakumo | Software Engineer & Ecommerce Expert',
+        description: 'Peter Onisha Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands. Expert in Laravel, AI, Next.js, Flutter, Shopify, and modern web technologies.',
         images: [
             {
                 url: '/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Peter Peregbakumo - Software Engineer & Ecommerce Expert',
+                alt: 'Peter Onisha Peregbakumo - Software Engineer & Ecommerce Expert',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Oniicode - Peter Peregbakumo | Software Engineer & Ecommerce Expert',
-        description: 'Peter Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands.',
+        title: 'Oniicode - Peter Onisha Peregbakumo | Software Engineer & Ecommerce Expert',
+        description: 'Peter Onisha Peregbakumo (Oniicode) - Software Engineer & Ecommerce Expert. Currently changing the future of Sleep at 3zbrands.',
         images: ['/og-image.jpg'],
         creator: '@oniicode',
         site: '@oniicode',

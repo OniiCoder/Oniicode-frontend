@@ -174,7 +174,7 @@ export default function OnlineFeatures() {
                         Have a feature or recognition to share? Let me know!
                     </p>
                     <a
-                        href="mailto:perezpeter32@gmail.com?subject=Online%20Feature%20or%20Recognition"
+                        href="mailto:peter@buukmenow.com?subject=Online%20Feature%20or%20Recognition"
                         className="inline-flex items-center gap-3 px-6 py-3 text-base font-medium text-[#2F8519] border-2 border-[#2F8519] rounded-full hover:bg-[#2F8519] hover:text-white transition-all duration-300"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

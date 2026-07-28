@@ -25,7 +25,7 @@ export default function CallToAction() {
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <a
-                        href="mailto:perezpeter32@gmail.com"
+                        href="mailto:peter@buukmenow.com"
                         className="inline-flex items-center px-8 py-4 text-lg font-medium text-[#2F8519] bg-white rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
                     >
                         Start a Conversation

@@ -50,7 +50,7 @@ export default function Hero() {
                 <div className="relative flex flex-col justify-end h-[70px]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
                     <div>
                         <a
-                            href="mailto:perezpeter32@gmail.com"
+                            href="mailto:peter@buukmenow.com"
                             className="inline-flex items-center gap-3 px-8 py-4 text-lg font-semibold text-white bg-gray-600 hover:bg-black rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-gray-300"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
