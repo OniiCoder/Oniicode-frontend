@@ -1,15 +1,17 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+    darkMode: 'class',
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
-        colors:{
+        colors: {
             ...colors,
             'dull-gray': '#7A7A7A'
         },
         extend: {
             fontFamily: {
-                sans: ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                sans: ['Satoshi', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                satoshi: ['Satoshi', 'system-ui', 'sans-serif'],
                 oniicode: ['var(--font-oniicode)', 'sans-serif']
             },
             animation: {

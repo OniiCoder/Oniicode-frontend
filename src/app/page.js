@@ -1,41 +1,40 @@
-import V2LandingPage from '@/components/v2/V2LandingPage'
+import MinimalPortfolio from '@/components/v3/MinimalPortfolio'
 
 export const metadata = {
-    title: 'AI Software Development Studio | Oniicode',
-    description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
+    title: 'Peter Onisha Peregbakumo',
+    description: 'Personal website of Peter Onisha Peregbakumo. Software engineer, AI builder, and founder of Buukmenow & Oniicode.',
     keywords: [
-        'AI Development',
-        'Laravel Development',
-        'Startup CTO',
-        'Custom Software',
-        'SaaS Development',
-        'AI Automation',
-        'AI Product Studio',
         'Peter Onisha Peregbakumo',
-        'BuukMeNow',
-        'Voice AI',
-        'Next.js AI',
+        'Peter Peregbakumo',
+        'Oniicode',
+        'Buukmenow',
+        'Software Engineer',
+        'AI Engineer',
+        'Machine Learning',
+        'SaaS Founder',
     ],
     openGraph: {
-        title: 'AI Software Development Studio | Oniicode',
-        description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
+        title: 'Peter Onisha Peregbakumo',
+        description: 'Personal website of Peter Onisha Peregbakumo. Software engineer, AI builder, and founder of Buukmenow & Oniicode.',
         url: 'https://oniicode.com',
-        siteName: 'Oniicode',
+        siteName: 'Peter Onisha Peregbakumo',
         images: [
             {
                 url: '/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'AI Software Development Studio | Oniicode',
+                alt: 'Peter Onisha Peregbakumo',
             },
         ],
         locale: 'en_US',
-        type: 'website',
+        type: 'profile',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'AI Software Development Studio | Oniicode',
-        description: 'Helping founders and businesses build AI-powered software, SaaS platforms and automation tools that drive growth.',
+        site: '@oniicode',
+        creator: '@oniicode',
+        title: 'Peter Onisha Peregbakumo',
+        description: 'Personal website of Peter Onisha Peregbakumo. Software engineer, AI builder, and founder of Buukmenow & Oniicode.',
         images: ['/og-image.jpg'],
     },
     alternates: {
@@ -44,5 +43,5 @@ export const metadata = {
 }
 
 export default function Page() {
-    return <V2LandingPage />
+    return <MinimalPortfolio />
 }
