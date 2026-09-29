@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Sun, X, Send, CheckCircle2, BedDouble } from 'lucide-react'
+import { SunIcon, XIcon, SendIcon, CheckCircle2Icon, BedDoubleIcon } from '@/components/v3/Icons'
 
 export default function MinimalPortfolio() {
   const [theme, setTheme] = useState('light')
@@ -126,7 +127,11 @@ export default function MinimalPortfolio() {
             </p>
 
             <p>
-              You can read my writing, explore what I am{' '}
+              You can read my{' '}
+              <Link href="/blog" className={linkStyle}>
+                writing
+              </Link>
+              , explore what I am{' '}
               <a
                 href="https://github.com/OniiCoder"
                 target="_blank"
@@ -192,9 +197,9 @@ export default function MinimalPortfolio() {
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
           >
             {theme === 'light' ? (
-              <BedDouble className="w-5 h-5 stroke-[1.75]" />
+              <BedDoubleIcon className="w-5 h-5 stroke-[1.75]" />
             ) : (
-              <Sun className="w-5 h-5 stroke-[1.75]" />
+              <SunIcon className="w-5 h-5 stroke-[1.75]" />
             )}
           </button>
         </footer>
@@ -238,7 +243,7 @@ export default function MinimalPortfolio() {
                   }`}
                   aria-label="Close modal"
                 >
-                  <X className="w-5 h-5" />
+                  <XIcon className="w-5 h-5" />
                 </button>
               </div>
 
@@ -247,7 +252,7 @@ export default function MinimalPortfolio() {
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto ${
                     theme === 'dark' ? 'bg-emerald-950/60 text-emerald-400' : 'bg-emerald-100 text-emerald-600'
                   }`}>
-                    <CheckCircle2 className="w-6 h-6" />
+                    <CheckCircle2Icon className="w-6 h-6" />
                   </div>
                   <h4 className="text-lg font-medium">Message Ready!</h4>
                   <p className={`text-sm max-w-xs mx-auto ${theme === 'dark' ? 'text-neutral-400' : 'text-neutral-600'}`}>
@@ -337,7 +342,7 @@ export default function MinimalPortfolio() {
                         <span>Sending...</span>
                       ) : (
                         <>
-                          <Send className="w-4 h-4" />
+                          <SendIcon className="w-4 h-4" />
                           <span>Send</span>
                         </>
                       )}

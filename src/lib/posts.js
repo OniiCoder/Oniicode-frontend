@@ -8,8 +8,12 @@ import breaks from 'remark-breaks'
 const postsDirectory = path.join(process.cwd(), 'src/data/blog')
 
 export async function getSortedPostsData() {
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+
   // Get file names under /src/data/blog
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'))
   const allPostsData = fileNames.map((fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '')
@@ -21,9 +25,15 @@ export async function getSortedPostsData() {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
 
+    // Calculate reading time
+    const wordCount = matterResult.content.trim().split(/\s+/g).length
+    const readingTime = Math.max(1, Math.ceil(wordCount / 180))
+
     // Combine the data with the id
     return {
       id,
+      slug: matterResult.data.slug || id,
+      readingTime: `${readingTime} min read`,
       ...matterResult.data,
     }
   })
@@ -39,27 +49,26 @@ export async function getSortedPostsData() {
 }
 
 export function getAllPostIds() {
-  const fileNames = fs.readdirSync(postsDirectory)
+  if (!fs.existsSync(postsDirectory)) {
+    return []
+  }
+
+  const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'))
   return fileNames.map((fileName) => {
-    // Read the file to get the slug from frontmatter
     const fullPath = path.join(postsDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
     
-    // Use slug from frontmatter, fallback to filename
     const slug = matterResult.data.slug || fileName.replace(/\.md$/, '')
     
     return {
-      params: {
-        id: slug,
-      },
+      id: slug,
     }
   })
 }
 
 export async function getPostData(id) {
-  // Find the file that matches the slug
-  const fileNames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'))
   let fileName = null
   
   for (const file of fileNames) {
@@ -93,11 +102,17 @@ export async function getPostData(id) {
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
+  // Calculate reading time
+  const wordCount = matterResult.content.trim().split(/\s+/g).length
+  const readingTime = Math.max(1, Math.ceil(wordCount / 180))
+
   // Combine the data with the id, raw content, and contentHtml
   return {
     id,
+    slug: matterResult.data.slug || id,
     rawContent,
     contentHtml,
+    readingTime: `${readingTime} min read`,
     ...matterResult.data,
   }
 }

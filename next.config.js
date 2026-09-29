@@ -1,5 +1,6 @@
 // next.config.js
 module.exports = {
+    transpilePackages: ['lucide-react'],
     images: {
         remotePatterns: [
             {
