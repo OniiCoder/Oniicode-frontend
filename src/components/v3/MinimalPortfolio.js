@@ -114,8 +114,8 @@ export default function MinimalPortfolio() {
                 className={linkStyle}
               >
                 3zbrands
-              </a>.
-              
+              </a>
+               &nbsp; and advancing my Cloud/DevOps Skills.
             </p>
 
             <p>

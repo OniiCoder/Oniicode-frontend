@@ -34,7 +34,7 @@ export const metadata = {
         site: '@oniicode',
         creator: '@oniicode',
         title: 'Peter Onisha Peregbakumo',
-        description: 'Personal website of Peter Onisha Peregbakumo. Software engineer, AI builder, and founder of Buukmenow & Oniicode.',
+        description: 'Personal website of Peter Onisha Peregbakumo. Software engineer, Cloud/DevOps Engineer, AI builder, and founder of Buukmenow & Oniicode.',
         images: ['/og-image.jpg'],
     },
     alternates: {
