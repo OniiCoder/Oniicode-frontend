@@ -98,7 +98,7 @@ export default function MinimalPortfolio() {
           {/* Section 1: Intro */}
           <section className={`space-y-6 text-[15px] sm:text-[16px] leading-[1.8] font-normal ${theme === 'dark' ? 'text-neutral-200' : 'text-neutral-800'}`}>
             <p>
-              I’m a builder who enjoys solving ambiguous problems. I’ve worked across software engineering, machine learning systems, and AI tools, with 7+ years of experience shipping production applications.
+              I’m a builder who enjoys solving ambiguous problems. I’ve worked across software engineering, cloud/devops, and ai tools, with 7+ years of experience shipping production applications.
             </p>
 
             <p>
@@ -114,8 +114,7 @@ export default function MinimalPortfolio() {
                 className={linkStyle}
               >
                 3zbrands
-              </a>
-               &nbsp; and advancing my Cloud/DevOps Skills.
+              </a>.
             </p>
 
             <p>
