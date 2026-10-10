@@ -98,31 +98,33 @@ export default function MinimalPortfolio() {
           {/* Section 1: Intro */}
           <section className={`space-y-6 text-[15px] sm:text-[16px] leading-[1.8] font-normal ${theme === 'dark' ? 'text-neutral-200' : 'text-neutral-800'}`}>
             <p>
-              I’m a builder who enjoys solving ambiguous problems. I’ve worked across software engineering, cloud/devops, and ai tools, with 7+ years of experience shipping production applications.
+              I’ve worked across software engineering, cloud/devops, and ai tools, with 7+ years of experience shipping production applications. <span className="italic text-neutral-900">Open to remote, contract and full-time opportunities.</span>
             </p>
 
             <p>
-              I’m passionate about building personalized, intelligent, and accessible software.
-            </p>
-
-            <p>
-              Currently working on Sleep Tech at{' '}
+              Currently making people fitter, healthier and richer with my babies; {' '}
               <a
-                href="https://3zbrands.com"
+                href="https://stepstakeapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={linkStyle}
               >
-                3zbrands
+                StepStake
+              </a>
+              {' '}
+              and{' '}
+              <a
+                href="https://buukmenow.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyle}
+              >
+                BuukMeNow
               </a>.
             </p>
 
             <p>
               Outside of work, I’m a songwriter, singer, content creator, and AI enthusiast.
-            </p>
-
-            <p>
-              I spend my spare time building <a href="https://buukmenow.com" target="_blank" rel="noopener noreferrer" className={linkStyle}>Buukmenow</a> with my bestfriend, a platform to help creatives and businesses book appointments seamlessly.
             </p>
 
             <p>
