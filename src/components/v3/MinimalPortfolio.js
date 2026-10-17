@@ -101,8 +101,16 @@ export default function MinimalPortfolio() {
               I’ve worked across software engineering, cloud/devops, and ai tools, with 7+ years of experience shipping production applications. <span className="italic text-neutral-900">Open to remote, contract and full-time opportunities.</span>
             </p>
 
-            <p>
-              Currently making people fitter, healthier and richer with my babies; {' '}
+            <p> Projects: {' '}
+              <a
+                href="https://oniicode.com/multiclip"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyle}
+              >
+                MultiClip
+              </a>,
+              {' '}
               <a
                 href="https://stepstakeapp.com"
                 target="_blank"
