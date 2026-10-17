@@ -242,7 +242,7 @@ function Hero() {
             </p>
             <div className="mc-rise mt-10 flex flex-col items-center gap-4" style={d(750)}>
                 <DownloadButton />
-                <p className="text-[12.5px] text-neutral-400 font-mono">macOS 13+ · Apple silicon & Intel · 193 KB</p>
+                <p className="text-[12.5px] text-neutral-400 font-mono">macOS 13+ · Apple silicon & Intel · 194 KB</p>
             </div>
         </section>
     )
@@ -477,9 +477,9 @@ function truncate(s, n) {
 function Features() {
     const items = [
         { t: 'Keeps everything', d: 'Text, links, rich text, images and files are pasted back exactly as you copied them.' },
-        { t: 'Invisible', d: 'No windows and no menu bar icon. It sits in the background until you use a shortcut.' },
+        { t: 'Invisible', d: 'No windows and no menu bar icon. It starts with your Mac and waits in the background, and your slots survive restarts.' },
         { t: 'Works everywhere', d: 'If an app supports copy and paste, it works with MultiClip.' },
-        { t: 'Tiny and native', d: 'Written in Swift. 193 KB, with one build for both Apple silicon and Intel Macs.' },
+        { t: 'Tiny and native', d: 'Written in Swift. 194 KB, with one build for both Apple silicon and Intel Macs.' },
     ]
     return (
         <section className="mx-auto max-w-6xl px-6 mt-32 sm:mt-44">
@@ -504,7 +504,7 @@ function Install() {
             t: 'Allow Accessibility',
             d: 'Open MultiClip. If macOS says it can’t check the developer, go to System Settings → Privacy & Security and click Open Anyway. Then switch MultiClip on under Privacy & Security → Accessibility.',
         },
-        { n: '03', t: 'Open it once more', d: 'MultiClip now runs in the background. Copy with ⌘C + 1–9 and paste with ⌘V + 1–9.' },
+        { n: '03', t: 'Open it once more', d: 'MultiClip now runs in the background and starts again every time you log in. Copy with ⌘C + 1–9 and paste with ⌘V + 1–9.' },
     ]
     return (
         <section className="mx-auto max-w-6xl px-6 mt-32 sm:mt-44">
