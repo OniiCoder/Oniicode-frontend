@@ -242,7 +242,7 @@ function Hero() {
             </p>
             <div className="mc-rise mt-10 flex flex-col items-center gap-4" style={d(750)}>
                 <DownloadButton />
-                <p className="text-[12.5px] text-neutral-400 font-mono">macOS 13+ · Apple silicon & Intel · 194 KB</p>
+                <p className="text-[12.5px] text-neutral-400 font-mono">macOS 13+ · Apple silicon & Intel · 464 KB</p>
             </div>
         </section>
     )
@@ -319,12 +319,68 @@ function Shortcuts() {
                         <p className="mt-2 text-[16px] leading-[1.6] text-neutral-500 max-w-sm">{r.text}</p>
                     </motion.div>
                 ))}
+                <motion.div
+                    {...fadeUp}
+                    className="bg-white p-7 sm:p-12 sm:col-span-2 grid gap-10 lg:grid-cols-[1fr_440px] lg:items-center">
+                    <div>
+                        <div className="flex items-center gap-2.5">
+                            <Key>⌘</Key>
+                            <Key>V</Key>
+                            <span className="ml-2 text-[13px] font-mono text-neutral-400">hold</span>
+                        </div>
+                        <h3 className="mt-10 text-[22px] font-semibold tracking-[-0.02em] text-[#1d1d1f]">Forgot what’s where?</h3>
+                        <p className="mt-2 text-[16px] leading-[1.6] text-neutral-500 max-w-md">
+                            Hold ⌘V for a moment and MultiClip shows what’s in every slot. Press a number to paste, or
+                            let go to cancel. Just want a look? Press ⌥⌘0.
+                        </p>
+                    </div>
+                    <SlotPreviewMock />
+                </motion.div>
             </div>
             <motion.p {...fadeUp} className="mt-6 text-center text-[13.5px] text-neutral-400">
                 You can hold all three keys together, or tap the number right after ⌘C / ⌘V. On their own,
                 ⌘C and ⌘V still work as usual.
             </motion.p>
         </section>
+    )
+}
+
+function SlotPreviewMock() {
+    const rows = [
+        ['TEXT', 'The best tools disappear the moment you start…'],
+        ['LINK', 'https://quiet.tools/research/attention'],
+        ['TEXT', 'Knowledge workers switch windows 1,200 times…'],
+        [null, null],
+        ['IMAGE', 'Screenshot 1280×800'],
+    ]
+    return (
+        <div className="rounded-[20px] bg-[#F7F7F8] p-5 ring-1 ring-black/[0.05] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
+            <div className="flex items-center justify-between border-b border-black/[0.07] pb-3 text-[12px]">
+                <span className="font-semibold text-[#1d1d1f]">MultiClip</span>
+                <span className="text-neutral-400">Press a number to paste</span>
+            </div>
+            <ul className="mt-2">
+                {rows.map(([kind, text], i) => (
+                    <li key={i} className="flex items-center gap-3 py-[7px] text-[13px]">
+                        <span
+                            className={`grid h-[22px] w-[22px] shrink-0 place-items-center rounded-[6px] font-mono text-[11px] ${
+                                kind ? 'bg-[#111113] text-white' : 'ring-1 ring-black/10 text-neutral-300'
+                            }`}>
+                            {i + 1}
+                        </span>
+                        {kind ? (
+                            <>
+                                <span className="w-11 shrink-0 text-[9.5px] font-semibold tracking-wide text-neutral-400">{kind}</span>
+                                <span className="truncate text-[#1d1d1f]">{text}</span>
+                            </>
+                        ) : (
+                            <span className="text-neutral-300">Empty</span>
+                        )}
+                    </li>
+                ))}
+            </ul>
+            <p className="mt-2 border-t border-black/[0.07] pt-3 text-center text-[11.5px] text-neutral-400">Let go of ⌘ to cancel</p>
+        </div>
     )
 }
 
@@ -479,7 +535,7 @@ function Features() {
         { t: 'Keeps everything', d: 'Text, links, rich text, images and files are pasted back exactly as you copied them.' },
         { t: 'Invisible', d: 'No windows and no menu bar icon. It starts with your Mac and waits in the background, and your slots survive restarts.' },
         { t: 'Works everywhere', d: 'If an app supports copy and paste, it works with MultiClip.' },
-        { t: 'Tiny and native', d: 'Written in Swift. 194 KB, with one build for both Apple silicon and Intel Macs.' },
+        { t: 'Tiny and native', d: 'Written in Swift. 464 KB, with one build for both Apple silicon and Intel Macs.' },
     ]
     return (
         <section className="mx-auto max-w-6xl px-6 mt-32 sm:mt-44">
