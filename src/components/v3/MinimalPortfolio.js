@@ -112,6 +112,15 @@ export default function MinimalPortfolio() {
               </a>,
               {' '}
               <a
+                href="https://oniicode.com/flashlight"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={linkStyle}
+              >
+                Reading Flashlight
+              </a>,
+              {' '}
+              <a
                 href="https://stepstakeapp.com"
                 target="_blank"
                 rel="noopener noreferrer"
