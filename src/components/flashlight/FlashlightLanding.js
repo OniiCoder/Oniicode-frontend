@@ -1,10 +1,9 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { createPortal } from 'react-dom'
 
-const DMG_URL = '/flashlight/ReadingFlashlight.dmg'
+const APP_STORE_URL = 'https://apps.apple.com/us/app/reading-flashlight/id6824158591?mt=12'
 const X_URL = 'https://x.com/oniicode'
 const BG = '#060607'
 
@@ -80,122 +79,17 @@ function Key({ children, active = false, size = 'md' }) {
     )
 }
 
-const QUARANTINE_CMD = 'xattr -dr com.apple.quarantine "/Applications/Reading Flashlight.app"'
-
-function BeforeYouDownload({ open, onClose }) {
-    const [copied, setCopied] = useState(false)
-
-    useEffect(() => {
-        if (!open) return
-        const onKey = (e) => e.key === 'Escape' && onClose()
-        window.addEventListener('keydown', onKey)
-        const prev = document.body.style.overflow
-        document.body.style.overflow = 'hidden'
-        return () => {
-            window.removeEventListener('keydown', onKey)
-            document.body.style.overflow = prev
-        }
-    }, [open, onClose])
-
-    if (!open || typeof document === 'undefined') return null
-
-    const copy = async () => {
-        try {
-            await navigator.clipboard.writeText(QUARANTINE_CMD)
-            setCopied(true)
-            setTimeout(() => setCopied(false), 1600)
-        } catch {
-            // Clipboard unavailable (e.g. insecure context) — the command is still visible to copy by hand.
-        }
-    }
-
-    const hl = 'text-white'
-    const steps = [
-        <>Open <span className={hl}>ReadingFlashlight.dmg</span> and drag Reading Flashlight into Applications.</>,
-        <>Open it. When macOS says <span className={hl}>“Reading Flashlight” Not Opened</span>, click <span className={hl}>Done</span>.</>,
-        <>Go to <span className={hl}>System Settings → Privacy &amp; Security</span>, scroll down and click <span className={hl}>Open Anyway</span>.</>,
-    ]
-
-    return createPortal(
-        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="fl-before-title">
-            <motion.div
-                className="absolute inset-0 bg-black/70 backdrop-blur-md"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.25 }}
-                onClick={onClose}
-            />
-            <motion.div
-                initial={{ opacity: 0, y: 16, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.45, ease }}
-                className="relative w-full max-w-[520px] rounded-[28px] bg-[#0F0F11] p-8 sm:p-10 text-left ring-1 ring-white/[0.08] shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)]">
-                <p className="text-[12px] font-medium uppercase tracking-[0.22em] text-white/35">Before you download</p>
-                <h2 id="fl-before-title" className="mt-4 text-[28px] font-bold tracking-[-0.03em] text-white">
-                    One extra step the first time.
-                </h2>
-                <p className="mt-3 text-[15px] leading-[1.65] text-white/50">
-                    Reading Flashlight isn’t notarized by Apple yet, so macOS shows a warning the first time you open
-                    it. Here’s how to get past it:
-                </p>
-
-                <ol className="mt-7 space-y-4">
-                    {steps.map((s, i) => (
-                        <li key={i} className="flex gap-4 text-[15px] leading-[1.6] text-white/50">
-                            <span className="mt-[1px] grid h-6 w-6 shrink-0 place-items-center rounded-[7px] bg-[#FFE2B0] font-mono text-[12px] text-[#1a140c]">
-                                {i + 1}
-                            </span>
-                            <span>{s}</span>
-                        </li>
-                    ))}
-                </ol>
-
-                <div className="mt-7 rounded-2xl bg-white/[0.04] ring-1 ring-white/[0.06] p-4">
-                    <p className="text-[13px] text-white/45">Prefer Terminal? After step 1, run:</p>
-                    <div className="mt-2 flex items-center gap-3">
-                        <code className="flex-1 overflow-x-auto whitespace-nowrap font-mono text-[12.5px] text-white/85">{QUARANTINE_CMD}</code>
-                        <button
-                            onClick={copy}
-                            className="shrink-0 h-7 px-3 rounded-full bg-white/[0.06] ring-1 ring-white/10 text-[12px] font-medium text-white/60 hover:text-white transition">
-                            {copied ? 'Copied' : 'Copy'}
-                        </button>
-                    </div>
-                </div>
-
-                <div className="mt-8 flex flex-col-reverse sm:flex-row sm:items-center sm:justify-end gap-3">
-                    <button onClick={onClose} className="h-11 px-5 rounded-full text-[14px] font-medium text-white/50 hover:text-white transition">
-                        Cancel
-                    </button>
-                    <a
-                        href={DMG_URL}
-                        download="ReadingFlashlight.dmg"
-                        onClick={() => setTimeout(onClose, 400)}
-                        className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-white px-6 text-[14px] font-medium text-black hover:bg-[#FFE9C4] active:scale-[0.98] transition">
-                        <AppleLogo className="w-[13px] h-[13px] -mt-0.5" />
-                        Download ReadingFlashlight.dmg
-                    </a>
-                </div>
-            </motion.div>
-        </div>,
-        document.body,
-    )
-}
-
 function DownloadButton({ size = 'lg' }) {
-    const [open, setOpen] = useState(false)
-    const close = useCallback(() => setOpen(false), [])
     const cls = size === 'lg' ? 'h-12 px-6 text-[15px] gap-2.5' : 'h-9 px-4 text-[13px] gap-2'
     return (
-        <>
-            <button
-                type="button"
-                onClick={() => setOpen(true)}
-                className={`inline-flex items-center rounded-full bg-white text-black font-medium tracking-[-0.01em] hover:bg-[#FFE9C4] hover:shadow-[0_0_40px_-6px_rgba(255,214,150,0.55)] active:scale-[0.98] transition ${cls}`}>
-                <AppleLogo className={size === 'lg' ? 'w-[15px] h-[15px] -mt-0.5' : 'w-3 h-3 -mt-0.5'} />
-                Download for Mac
-            </button>
-            <BeforeYouDownload open={open} onClose={close} />
-        </>
+        <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center rounded-full bg-white text-black font-medium tracking-[-0.01em] hover:bg-[#FFE9C4] hover:shadow-[0_0_40px_-6px_rgba(255,214,150,0.55)] active:scale-[0.98] transition ${cls}`}>
+            <AppleLogo className={size === 'lg' ? 'w-[15px] h-[15px] -mt-0.5' : 'w-3 h-3 -mt-0.5'} />
+            Download on the Mac App Store
+        </a>
     )
 }
 
@@ -517,38 +411,6 @@ function Features() {
     )
 }
 
-function Install() {
-    const steps = [
-        { n: '01', t: 'Drag to Applications', d: 'Open ReadingFlashlight.dmg and drag Reading Flashlight into your Applications folder.' },
-        {
-            n: '02',
-            t: 'Open it',
-            d: 'If macOS says it can’t check the developer, go to System Settings → Privacy & Security and click Open Anyway. You only need to do this once.',
-        },
-        { n: '03', t: 'Start reading', d: 'The flashlight appears in your menu bar and turns on right away. Press ⌃⌥F whenever you want it on or off.' },
-    ]
-    return (
-        <section className="mx-auto max-w-6xl px-6 mt-32 sm:mt-44">
-            <motion.h2 {...fadeUp} className="text-[36px] sm:text-[52px] font-bold tracking-[-0.04em] text-white">
-                Set up in under a minute.
-            </motion.h2>
-            <div className="mt-14 divide-y divide-white/[0.07] border-y border-white/[0.07]">
-                {steps.map((s, i) => (
-                    <motion.div
-                        key={s.n}
-                        {...fadeUp}
-                        transition={{ ...fadeUp.transition, delay: i * 0.08 }}
-                        className="grid gap-3 py-9 sm:grid-cols-[120px_280px_1fr] sm:gap-8 sm:items-baseline">
-                        <span className="font-mono text-[13px] text-white/30">{s.n}</span>
-                        <h3 className="text-[19px] font-semibold tracking-[-0.02em] text-white">{s.t}</h3>
-                        <p className="text-[16px] leading-[1.65] text-white/45 max-w-xl">{s.d}</p>
-                    </motion.div>
-                ))}
-            </div>
-        </section>
-    )
-}
-
 function FinalCTA() {
     return (
         <section className="relative mx-auto max-w-6xl px-6 mt-36 sm:mt-48 text-center">
@@ -613,7 +475,6 @@ export default function FlashlightLanding() {
             <TryIt />
             <Shortcuts />
             <Features />
-            <Install />
             <FinalCTA />
             <Footer />
         </main>
